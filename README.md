@@ -87,17 +87,24 @@ train = pd.read_csv(test_path)
 def _tokenizer(text, token_pattern=r"(?u)\b\w\w+\b"):
     token_pattern = re.compile(token_pattern)
     return token_pattern.findall(text)
-
+```
 # Load sample data
+```
 train_data = test['text']
 train_x = train_data.head().values
+```
 # Tokenize input
+```
 train_x_tokens = [_tokenizer(x) for x in train_x]
+```
 # Train TF-IDF model
+```
 tfidf_model = nmw.TfIdf()
 tfidf_model.train(train_x_tokens)
 tfidf_model.save('.')
+```
 # Load TF-IDF augmenter
+```
 aug = naw.TfIdfAug(model_path='.', tokenizer=_tokenizer)
 texts = train_x
 
@@ -107,3 +114,4 @@ def tfidfaug(text):
     return  augmented_data
 train['tfidf']=test['text'].apply(tfidfaug)
 train.to_csv(train_path)
+```
