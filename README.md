@@ -1,7 +1,10 @@
 # --文本增强
 # 前言
 此次处理主要使用了nlpaug库中RandomWordAug和TfIdfAug方法。
-
+# [什么是TF-IDF](https://baike.baidu.com/item/tf-idf)
+这里介绍主要公式TF−IDF=TF∗IDF<br>
+词频 ( TF) 指的是某一个给定的词语在该文件中出现的次数。这个数字通常会被归一化(一般是词频除以文章总词数), 以防止它偏向长的文件。（同一个词语在长文件里可能会比短文件有更高的词频，而不管该词语重要与否。）<br>
+逆向文件频率 (inverse document frequency, IDF) IDF的主要思想是：如果包含词条t的文档越少, IDF越大，则说明词条具有很好的类别区分能力。某一特定词语的IDF，可以由总文件数目除以包含该词语之文件的数目，再将得到的商取对数得到<br>
 # [nlpaug库](https://github.com/makcedward/nlpaug)
 This python library helps you with augmenting nlp for your machine learning projects. Visit this introduction to understand about Data Augmentation in NLP. Augmenter is the basic element of augmentation while Flow is a pipeline to orchestra multi augmenter together.
 
