@@ -9,7 +9,7 @@
 This python library helps you with augmenting nlp for your machine learning projects. Visit this introduction to understand about Data Augmentation in NLP. Augmenter is the basic element of augmentation while Flow is a pipeline to orchestra multi augmenter together.
 
 
-# RandomWordAug方法参数
+# RandomWordAug方法参数  此次处理通过对action参数取不同值来达到文本增强目的
 action (str) – ‘substitute’, ‘swap’, ‘delete’ or ‘crop’. If value is ‘swap’, adjacent words will be swapped randomly. If value is ‘delete’, word will be removed randomly. If value is ‘crop’, a set of contunous word will be removed randomly.<br>
 aug_p (float) – Percentage of word will be augmented.<br>
 aug_min (int) – Minimum number of word will be augmented.<br>
@@ -20,7 +20,7 @@ target_words (list) – List of word for replacement (used for substitute operat
 tokenizer (func) – Customize tokenization process<br>
 reverse_tokenizer (func) – Customize reverse of tokenization process<br>
 name (str) – Name of this augmenter<br>
-#TfIdfAug方法参数
+# TfIdfAug方法参数  
 model_path (str) – Downloaded model directory. Either model_path or model is must be provided<br>
 action (str) – Either ‘insert or ‘substitute’. If value is ‘insert’, a new word will be injected to random position according to TF-IDF calculation. If value is ‘substitute’, word will<br> be replaced according to TF-IDF calculation<br>
 top_k (int) – Controlling lucky draw pool. Top k score token will be used for augmentation. Larger k, more token can be used. Default value is 5. If value is None which means using all<br> possible tokens.<br>
